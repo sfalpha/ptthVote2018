@@ -29,7 +29,6 @@ contract ptthVote2018 {
     }
 
     string public name;
-    uint8[] public numbers;
     mapping(uint8 => Candidate) public candidates;
     mapping(address => bool) public voters;
     address private owner;
@@ -41,7 +40,6 @@ contract ptthVote2018 {
         owner = msg.sender;
         for (i = 0; i < candidateNumbers.length; i++) {
             candidates[candidateNumbers[i]] = Candidate({exist: true, aye: 0, nay: 0});
-            numbers.push(candidateNumbers[i]);
         }
         password = sha256(abi.encodePacked(block.timestamp, block.difficulty, voteName));
     }
@@ -56,7 +54,7 @@ contract ptthVote2018 {
         require(sha256(abi.encodePacked(password, msg.sender)) == passHash);
         require(! voters[msg.sender]);
         require(voteNumbers.length == votes.length);
-        for (i = 0; i < numbers.length; i++) {
+        for (i = 0; i < voteNumbers.length; i++) {
             uint8 voteNumber = voteNumbers[i];
             require(candidates[voteNumber].exist);
             if (votes[i]) {
