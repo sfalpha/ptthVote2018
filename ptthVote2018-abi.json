@@ -25,7 +25,7 @@
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint8"
+				"type": "uint32"
 			}
 		],
 		"payable": false,
@@ -48,11 +48,11 @@
 			},
 			{
 				"name": "aye",
-				"type": "uint8"
+				"type": "uint32"
 			},
 			{
 				"name": "nay",
-				"type": "uint8"
+				"type": "uint32"
 			}
 		],
 		"payable": false,
@@ -71,7 +71,7 @@
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint8"
+				"type": "uint32"
 			}
 		],
 		"payable": false,
